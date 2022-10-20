@@ -17,12 +17,12 @@ export const TransactionHistory = ({ items }) => {
           <th>Currency</th>
         </tr>
       </TransactionsThead>
-      {items.map(item => (
-        <TransactionsTbody key={item.id}>
+      {items.map(({ id, type, amount, currency }) => (
+        <TransactionsTbody key={id}>
           <tr>
-            <TransactionsTd>{firstLetterUpperCase(item.type)}</TransactionsTd>
-            <TransactionsTd>{item.amount}</TransactionsTd>
-            <TransactionsTd>{item.currency}</TransactionsTd>
+            <TransactionsTd>{firstLetterUpperCase(type)}</TransactionsTd>
+            <TransactionsTd>{amount}</TransactionsTd>
+            <TransactionsTd>{currency}</TransactionsTd>
           </tr>
         </TransactionsTbody>
       ))}

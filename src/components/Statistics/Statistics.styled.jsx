@@ -18,6 +18,7 @@ export const StatsTitle = styled.h2`
 export const StatList = styled.ul`
   display: flex;
   flex-direction: row;
+  background-color: #ccc;
 `;
 
 export const StatItem = styled.li`
@@ -27,11 +28,9 @@ export const StatItem = styled.li`
   justify-content: center;
   height: 60px;
   width: 60px;
-
-  background-color: ${({ color }) => {
-    const colorArray = ['#E74C3C', '#8E44AD', '#3498DB', '#27AE60', '#F39C12'];
-    return `${colorArray[Number(color.id.replace(/[^0-9]/g, '')) % 5]}`;
-  }};
+  /* background-color: ${function getRandomHexColor() {
+    return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+  }}; */
 `;
 
 export const StatLabel = styled.span`

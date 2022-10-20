@@ -1,3 +1,4 @@
+import { randomBgColor } from 'utils';
 import PropTypes from 'prop-types';
 import {
   StatisticsSection,
@@ -14,14 +15,14 @@ export const Statistics = ({ title, stats }) => {
       {title && <StatsTitle>{title}</StatsTitle>}
 
       <StatList>
-        {stats.map(stat => (
+        {stats.map(({ id, label, percentage }) => (
           <StatItem
-            key={stat.id}
-            // style={{ backgroundColor: randomBgColor(stat) }}
-            color={stat}
+            key={id}
+            style={{ backgroundColor: randomBgColor(id) }}
+            // color={stats}
           >
-            <StatLabel>{stat.label}</StatLabel>
-            <StatValue>{`${stat.percentage}%`}</StatValue>
+            <StatLabel>{label}</StatLabel>
+            <StatValue>{`${percentage}%`}</StatValue>
           </StatItem>
         ))}
       </StatList>

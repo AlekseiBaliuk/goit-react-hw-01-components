@@ -7,7 +7,7 @@ export const FrienList = styled.ul`
   margin-top: 50px;
 `;
 
-export const FriendListItem = styled.li`
+export const FriendListLi = styled.li`
   display: flex;
   align-items: center;
   width: 360px;
